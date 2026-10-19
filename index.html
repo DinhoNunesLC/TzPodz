@@ -5,41 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050505">
 <title>TZ PODZ | Catálogo</title>
-<style>
-:root{--gold:#ffd700;--green:#39ff14;--bg:#050505;--card:#101010;--muted:#a5a5a5}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#f7f7f7;font-family:Arial,Helvetica,sans-serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 10% 5%,#39ff140b,transparent 40%),radial-gradient(ellipse at 95% 60%,#ffd7000a,transparent 45%)}
-header{display:flex;justify-content:space-between;align-items:center;padding:22px max(5%,calc((100% - 1200px)/2));border-bottom:1px solid #292929}
-.logo{font-size:29px;font-weight:900;letter-spacing:3px}.logo span{color:var(--gold);text-shadow:0 0 15px #ffd70099}
-header small{color:var(--green);letter-spacing:2px;font-size:11px;text-shadow:0 0 12px #39ff1470}
-.hero{text-align:center;padding:85px 20px 65px}.eyebrow{color:var(--green);letter-spacing:4px;font-size:12px;text-shadow:0 0 12px var(--green)}
-h1{font-size:clamp(38px,7vw,76px);margin:15px 0;letter-spacing:-2px}h1 em{font-style:normal;color:var(--gold);text-shadow:0 0 35px #ffd70055}
-.hero p{color:var(--muted);line-height:1.7}main{max-width:1200px;margin:auto;padding:0 20px 70px}
-.search{width:100%;max-width:420px;padding:15px 18px;background:#111;border:1px solid #333;border-radius:12px;color:#fff;outline:none;margin-bottom:30px}.search:focus{border-color:var(--green);box-shadow:0 0 15px #39ff1425}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.card{background:var(--card);border:1px solid #292929;border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column;height:100%}
-.card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 0 25px #ffd70022,0 0 45px #39ff140d}
-.photo{height:260px;background:radial-gradient(circle,#222 0%,#0a0a0a 70%);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:contain}.fruit-icon{font-size:clamp(76px,10vw,125px);line-height:1;filter:drop-shadow(0 0 22px #39ff1433)}.placeholder{display:flex;flex-direction:column;align-items:center;gap:12px;color:#666;font-size:12px;letter-spacing:2px}.placeholder b{font-size:75px;font-weight:normal;color:#4b4b4b;text-shadow:0 0 25px #ffd70022}
-.info{padding:21px;display:flex;flex-direction:column;flex:1;gap:14px}.info h2{margin:0;font-size:22px;line-height:1.3}.info p{color:var(--muted);font-size:13px;line-height:1.6;min-height:40px}
-.price{color:#fff;font-weight:800;font-size:23px;margin:18px 0}.price.unset{font-size:15px;color:#aaa}
-button{font:inherit;cursor:pointer}.details{width:100%;margin-top:auto;background:#0b0b0b;border:1px solid var(--gold);color:var(--gold);padding:13px;border-radius:10px;font-weight:700;transition:.2s}.details:hover{background:#ffd700;color:#050505;box-shadow:0 0 20px #ffd70066}
-footer{text-align:center;border-top:1px solid #242424;color:#777;padding:28px;font-size:12px}
-.modal{position:fixed;inset:0;background:#000d;z-index:20;display:none;align-items:center;justify-content:center;padding:15px}.modal.open{display:flex}
-.dialog{width:100%;max-width:500px;max-height:92vh;overflow:auto;background:#101010;border:1px solid var(--green);border-radius:20px;padding:24px;box-shadow:0 0 35px #39ff1425}
-.close{float:right;background:#222;border:0;color:white;border-radius:9px;padding:9px 13px}.modal-photo{height:250px;display:flex;align-items:center;justify-content:center;clear:both}.modal-photo img{max-width:100%;max-height:100%;object-fit:contain}
-.order{display:block;text-align:center;text-decoration:none;padding:15px;border-radius:10px;background:var(--green);color:#050505;font-weight:800;box-shadow:0 0 18px #39ff1440}.order.disabled{pointer-events:none;background:#333;color:#999;box-shadow:none}
-@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo{height:200px}}
-@media(max-width:500px){header{padding:18px}.hero{padding:60px 15px 45px}.grid{gap:12px}.photo{height:150px}.info{padding:13px}.info h2{font-size:17px}.info p{font-size:12px}.price{font-size:19px}.details{font-size:12px;padding:12px 5px}}
-
-@keyframes neonGold{0%,100%{text-shadow:0 0 8px #ffd70070,0 0 20px #ffd70030}50%{text-shadow:0 0 18px #ffd700cc,0 0 38px #ffd70080}}
-@keyframes neonGreen{0%,100%{text-shadow:0 0 8px #39ff1470}50%{text-shadow:0 0 20px #39ff14cc,0 0 34px #39ff1470}}
-@keyframes neonBorder{0%,100%{box-shadow:0 0 8px #ffd70018,0 0 14px #39ff1412;border-color:#45402b}50%{box-shadow:0 0 20px #ffd70040,0 0 30px #39ff1429;border-color:#a38c22}}
-.logo span,h1 em{animation:neonGold 3.5s ease-in-out infinite}
-header small,.eyebrow{animation:neonGreen 3s ease-in-out infinite}
-.card:hover,.dialog{animation:neonBorder 3s ease-in-out infinite}
-@media(prefers-reduced-motion:reduce){.logo span,h1 em,header small,.eyebrow,.card:hover,.dialog{animation:none}}
-</style>
+<link rel="stylesheet" href="assets/style.css?v=1792379650287">
 </head>
 <body>
 <header><div class="logo">TZ <span>PODZ</span></div><small>QUALIDADE INCOMPARÁVEL</small></header>
@@ -47,25 +13,6 @@ header small,.eyebrow{animation:neonGreen 3s ease-in-out infinite}
 <main><input class="search" id="search" placeholder="Buscar produto..." aria-label="Buscar produto"><div class="grid" id="grid"></div></main>
 <div class="modal" id="modal"><div class="dialog"><button class="close" id="close">✕</button><div class="modal-photo" id="modalPhoto"></div><h2 id="modalName"></h2><p id="modalDescription" style="color:#aaa;line-height:1.6"></p></div></div>
 <footer>© 2026 TZ PODZ • QUALIDADE E ESTILO EM CADA DETALHE</footer>
-<script>
-const whatsapp="";
-const products=[{"id":1,"name":"Ignite - Aloe Grape","image":"","description":"Sabor Aloe Grape. Informações sobre o sabor e suas características."},{"id":2,"name":"Ignite - Banana Ice","image":"","description":"Sabor Banana Ice. Informações sobre o sabor e suas características."},{"id":3,"name":"Ignite - Blue Dream","image":"","description":"Sabor Blue Dream. Informações sobre o sabor e suas características."},{"id":4,"name":"Ignite - Blue Raspberry Ice","image":"","description":"Sabor Blue Raspberry Ice. Informações sobre o sabor e suas características."},{"id":5,"name":"Ignite - Blueberry Ice","image":"","description":"Sabor Blueberry Ice. Informações sobre o sabor e suas características."},{"id":6,"name":"Ignite - Grape Ice","image":"","description":"Sabor Grape Ice. Informações sobre o sabor e suas características."},{"id":7,"name":"Ignite - Green Apple","image":"","description":"Sabor Green Apple. Informações sobre o sabor e suas características."},{"id":8,"name":"Ignite - Icy Mint","image":"","description":"Sabor Icy Mint. Informações sobre o sabor e suas características."},{"id":9,"name":"Ignite - Menthol","image":"","description":"Sabor Menthol. Informações sobre o sabor e suas características."},{"id":10,"name":"Ignite - Mixed Berries","image":"","description":"Sabor Mixed Berries. Informações sobre o sabor e suas características."},{"id":11,"name":"Ignite - Peach Mango Watermelon","image":"","description":"Sabor Peach Mango Watermelon. Informações sobre o sabor e suas características."},{"id":12,"name":"Ignite - Peach Raspberry","image":"","description":"Sabor Peach Raspberry. Informações sobre o sabor e suas características."},{"id":13,"name":"Ignite - Strawberry Banana","image":"","description":"Sabor Strawberry Banana. Informações sobre o sabor e suas características."},{"id":14,"name":"Ignite - Strawberry Kiwi","image":"","description":"Sabor Strawberry Kiwi. Informações sobre o sabor e suas características."},{"id":15,"name":"Ignite - Strawberry Mango","image":"","description":"Sabor Strawberry Mango. Informações sobre o sabor e suas características."},{"id":16,"name":"Ignite - Strawberry Watermelon","image":"","description":"Sabor Strawberry Watermelon. Informações sobre o sabor e suas características."},{"id":17,"name":"Ignite - Watermelon Mix","image":"","description":"Sabor Watermelon Mix. Informações sobre o sabor e suas características."},{"id":18,"name":"Ignite - Watermelon Ice","image":"","description":"Sabor Watermelon Ice. Informações sobre o sabor e suas características."}];
-const flavorIcons=["🌿","🍌","🫐","🫐","🫐","🍇","🍏","🌿","🌿","🍓","🥭","🍑","🍓","🥝","🥭","🍉","🍉","🍉"];
-const illustration=p=>{
-const emoji=flavorIcons[p.id-1]||"🍃";
-const svg='<svg xmlns="http://www.w3.org/2000/svg" width="600" height="520" viewBox="0 0 600 520"><defs><radialGradient id="g"><stop stop-color="#20251d"/><stop offset="1" stop-color="#090a09"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="16"/></filter></defs><rect width="600" height="520" fill="url(#g)"/><circle cx="300" cy="248" r="148" fill="none" stroke="#ffd700" stroke-width="5" opacity=".18" filter="url(#glow)"/><circle cx="300" cy="248" r="148" fill="none" stroke="#39ff14" stroke-width="2" opacity=".7"/><text x="300" y="294" font-size="165" text-anchor="middle">'+emoji+'</text><text x="300" y="435" fill="#d9b959" font-family="Arial" font-size="22" text-anchor="middle" letter-spacing="5">PERFIL AROMÁTICO</text></svg>';
-return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-};
-const money=n=>n===null?"Consulte o valor":n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-const photo=p=>p.image?'<img src="'+p.image+'" alt="'+p.name+'">':'<div class="fruit-icon" role="img" aria-label="Ícone ilustrativo de '+p.name+'">'+(flavorIcons[p.id-1]||"🍃")+'</div>';
-function render(){const q=document.getElementById("search").value.toLowerCase();const items=products.filter(p=>p.name.toLowerCase().includes(q));document.getElementById("grid").innerHTML=items.length?items.map(p=>'<article class="card"><div class="photo">'+photo(p)+'</div><div class="info"><h2>'+p.name+'</h2><button class="details" data-id="'+p.id+'">VER DETALHES →</button></div></article>').join(""):'<p>Nenhum produto encontrado.</p>'}
-function openModal(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById("modalPhoto").innerHTML=photo(p);document.getElementById("modalName").textContent=p.name;document.getElementById("modalDescription").textContent=p.description;document.getElementById("modal").classList.add("open")}
-function closeModal(){document.getElementById("modal").classList.remove("open")}
-document.getElementById("grid").addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(b)openModal(Number(b.dataset.id))});
-document.getElementById("close").addEventListener("click",closeModal);
-document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-document.getElementById("search").addEventListener("input",render);render();
-</script>
+<script src="assets/script.js?v=1792379650287" defer></script>
 </body>
 </html>
